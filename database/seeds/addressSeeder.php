@@ -14,9 +14,10 @@ class addressSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        $this->command->info("Generating 10.000 addresses (batch " . $y . ")");
 
         for ($y = 0; $y <= 100; $y++) {
+            $this->command->info("Generating 10.000 addresses (batch " . $y . ")");
+
             for ($x = 0; $x <= 10000; $x++) {
                 DB::table('address')->insert([
                     'street' => $faker->word . 'straat',
